@@ -1,6 +1,3 @@
-// import { Routes } from '@angular/router';
-
-// export const routes: Routes = [];
 
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +11,11 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./login/login.component').then(m => m.LoginComponent),   
+    loadComponent: () => import('./login/login.component').then(m => m.LoginComponent)
+   
+  },
+  {
+    path: 'admin',
+    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent)
   }
 ];

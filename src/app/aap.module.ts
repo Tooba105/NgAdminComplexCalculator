@@ -1,19 +1,27 @@
+
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // ✅ Add FormsModule here
+import { AppRoutingModule } from './app-routing.module';
+
 import { RouterOutlet } from '@angular/router';
 import { CoreModule } from './core/core.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+   
   ],
   imports: [
     BrowserModule,
-    RouterOutlet,
-    CoreModule
+    AppRoutingModule,
+    FormsModule,           // ✅ This fixes the ngModel error
+    ReactiveFormsModule,
+    RouterOutlet
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

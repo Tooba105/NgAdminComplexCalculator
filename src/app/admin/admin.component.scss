@@ -7,17 +7,13 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 8px;
-}
-
-/* Dropdown */
-#xiaofeiMode {
-    padding: 8px 12px;
     font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
+ table,
+    th,
+    td {
+        font-size: 20px;
+    }
 
 /* Heading */
 h2 {
@@ -27,9 +23,8 @@ h2 {
 
 /* Table styling */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fafafa;
+   width: 100%;    
+    padding: 5px;
 }
 
 /* Table header */
@@ -68,7 +63,7 @@ tbody tr:hover {
     table,
     th,
     td {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 

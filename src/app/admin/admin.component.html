@@ -1,81 +1,121 @@
 <div id="container">
+    <form [formGroup]="adminForm">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" formControlName="groupNo" placeholder="Enter Group Number"
+                aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button (click)="getAdminData()" class="btn btn-outline-secondary" type="button" >Search</button>
+            </div>
+        </div>    
+        <div class="input-group mb-3 mt-2">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Select Mode:</label>
+            </div>
+            <select class="custom-select" id="tipMode" formControlName="tipMode">
+                <option value="5000">5000</option>
+                <option value="7000">7000</option>
+            </select>
+        </div>
 
-    <label for="xiaofeiMode"><strong>Select Mode:</strong></label>
-    <select id="xiaofeiMode">
-        <option value="5000">5000</option>
-        <option value="7000">7000</option>
-    </select>
-
-    <h2>Data Table</h2>
-    <table>
-        <thead>
+    </form>
+    <div class="mb-3 mt-3">
+        <table class="table table-bordered">
+            <!-- <thead>
             <tr>
                 <th>Number</th>
                 <th>Value</th>
             </tr>
+        </thead> -->
+     @if (scoreBoardTotal$ | async; as total) {
+            <tbody>
+                <tr>
+                    <td>1 :</td>
+                    <td>{{total.one}}</td>
+                </tr>
+                <tr>
+                    <td>2 :</td>
+                    <td>{{total.two}}</td>
+                </tr>
+                <tr>
+                    <td>3 :</td>
+                    <td>{{total.three}}</td>
+                </tr>
+                <tr>
+                    <td>4 :</td>
+                    <td>{{total.four}}</td>
+                </tr>
+                <tr>
+                    <td>5 :</td>
+                    <td>{{total.five}}</td>
+                </tr>
+                <tr>
+                    <td>6 :</td>
+                    <td>{{total.six}}</td>
+                </tr>
+            </tbody>
+        }
+        </table>
+    </div>
+
+    <div class="row-box">
+        <div class="cell">在线数：0</div>
+        <div class="cell">落子：0</div>
+        <div class="cell">小费：0</div>
+    </div>
+        <div class="mb-3 mt-3">
+        <table class="table table-bordered">
+            <thead>
+
+            <tr>
+                <th>群号</th>
+                <th>输赢</th>
+                <th>落子</th>
+                <th>小费</th>
+                <th>统计</th>
+            </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>1 :</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>2 :</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>3 :</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>4 :</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>5 :</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>6 :</td>
-                <td>0</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <tbody>
+                @for (item of lstScoreBoardGrid$ | async; track item) {
+                <tr>
+                    <td>{{item.inputByUser}}</td>
+                    <td>{{item.mainTube}}</td>
+                    <td>{{item.luozi}}</td>
+                    <td>{{item.smallTable}}</td>
+                    <td>{{item.statistics}}</td>
+                </tr>      
+            }
+            </tbody>
+        </table>
+    </div>
 
-<div class="row-box">
-    <div class="cell">在线数：0</div>
-    <div class="cell">落子：0</div>
-    <div class="cell">小费：0</div>
-</div>
+    <!-- <div class="row-box bold">
+        <div class="cell">群号</div>
+        <div class="cell">输赢</div>
+        <div class="cell">落子</div>
+        <div class="cell">小费</div>
+        <div class="cell">统计</div>
+    </div> -->
 
-<div class="row-box bold">
-    <div class="cell">群号</div>
-    <div class="cell">输赢</div>
-    <div class="cell">落子</div>
-    <div class="cell">小费</div>
-    <div class="cell">统计</div>
-</div>
+    <div class="row-box">
+        <div class="cell">小费：0</div>
+        <div class="cell">总账：0</div>
+    </div>
 
-<div class="row-box">
-    <div class="cell">小费：0</div>
-    <div class="cell">总账：0</div>
-</div>
+    <div class="row-box">
+        <div class="cell">本筒净输赢：0</div>
+    </div>
 
-<div class="row-box">
-    <div class="cell">本筒净输赢：0</div>
-</div>
+    <div class="row-box bold">
+        <div class="cell">落子</div>
+        <div class="cell">输赢</div>
+        <div class="cell">小费</div>
+        <div class="cell">统计</div>
+    </div>
 
-<div class="row-box bold">
-    <div class="cell">落子</div>
-    <div class="cell">输赢</div>
-    <div class="cell">小费</div>
-    <div class="cell">统计</div>
-</div>
-
-<div class="row-box">
-    <div class="cell">总和：0</div>
-    <div class="cell">0</div>
-    <div class="cell">0</div>
-    <div class="cell">0</div>
+    <div class="row-box">
+        <div class="cell">总和：0</div>
+        <div class="cell">0</div>
+        <div class="cell">0</div>
+        <div class="cell">0</div>
+    </div>
 </div>

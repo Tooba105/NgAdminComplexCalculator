@@ -17,11 +17,12 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,           // ✅ This fixes the ngModel error
+    CoreModule,    
     ReactiveFormsModule,
     RouterOutlet
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }
 

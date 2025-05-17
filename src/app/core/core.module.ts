@@ -11,6 +11,7 @@ import { NgModule } from '@angular/core';
       useClass: AuthInterceptor,
       multi: true
     }
-  ]
+  ],
+  
 })
 export class CoreModule {}

@@ -26,3 +26,12 @@ export class TotalScoreBoradModelResponse {
   lstScoreBoardGrid: ScoreBoardGrid[] = [];
   scoreBoardTotal: ScoreBoardTotal = new ScoreBoardTotal();
 }
+
+export class DataPerRoundSum {
+  tube: string = "";
+  luozi: number = 0;
+  winOrLose: number = 0;
+  smallTable: number = 0;
+  statistics: number = 0;  
+}
+
